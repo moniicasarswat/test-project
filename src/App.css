@@ -76,6 +76,10 @@
     0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
+.key-sqrt {
+  grid-column: 1 / -1;
+}
+
 .key-function {
   background: #fff3d6;
   box-shadow:
