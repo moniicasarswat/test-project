@@ -68,6 +68,10 @@ function App() {
     setDisplay((prev) => formatDisplay(parseFloat(prev) / 100))
   }, [])
 
+  const inputSqrt = useCallback(() => {
+    setDisplay((prev) => formatDisplay(Math.sqrt(parseFloat(prev))))
+  }, [])
+
   const performOperation = useCallback(
     (nextOperator) => {
       const inputValue = parseFloat(display)
@@ -136,6 +140,8 @@ function App() {
         <div className="calculator-result">{display}</div>
       </div>
       <div className="calculator-keys">
+        <button className="key key-function key-sqrt" onClick={inputSqrt}>√</button>
+
         <button className="key key-function" onClick={clearAll}>C</button>
         <button className="key key-function" onClick={toggleSign}>+/-</button>
         <button className="key key-function" onClick={inputPercent}>%</button>
